@@ -74,7 +74,7 @@ const schemas = [localBusinessSchema, ...(schema ? (Array.isArray(schema) ? sche
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0F3460" />
+    <meta name="theme-color" content="#1F473E" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
@@ -96,8 +96,11 @@ const schemas = [localBusinessSchema, ...(schema ? (Array.isArray(schema) ? sche
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" is:inline></script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -107,7 +110,7 @@ const schemas = [localBusinessSchema, ...(schema ? (Array.isArray(schema) ? sche
       <script type="application/ld+json" set:html={JSON.stringify(s)} />
     ))}
   </head>
-  <body class="bg-[#F8FAFC] min-h-screen flex flex-col">
+  <body class="bg-sand min-h-screen flex flex-col relative overflow-x-hidden">
     <Header />
     <main class="flex-1">
       <slot />

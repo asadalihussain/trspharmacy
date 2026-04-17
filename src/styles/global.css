@@ -1,6 +1,27 @@
 @import "tailwindcss";
 
 @theme {
+  /* New palette: Forest Green + Terracotta */
+  --color-forest-50: #F2F6F5;
+  --color-forest-100: #E5EDE7;
+  --color-forest-200: #CADBD2;
+  --color-forest-300: #AEC8BD;
+  --color-forest-400: #7B9F91;
+  --color-forest-500: #4D7A6C;
+  --color-forest-600: #3A5F53;
+  --color-forest-700: #2A473E;
+  --color-forest-800: #1F473E;
+  --color-forest-900: #112923;
+
+  --color-terra: #DC745A;
+  --color-terra-dark: #C25D44;
+  --color-terra-pale: #F8E8E4;
+  --color-terra-deep: #A64630;
+
+  --color-sand: #F8F6F2;
+  --color-cream: #FCFAF8;
+
+  /* Legacy tokens — used by inner pages */
   --color-navy: #0F3460;
   --color-navy-dark: #0a2444;
   --color-teal: #17A2B8;
@@ -9,7 +30,26 @@
   --color-surface: #FFFFFF;
   --color-text: #1E293B;
   --color-text-muted: #64748B;
+
+  /* Fonts */
+  --font-heading: 'Outfit', sans-serif;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  /* Animations */
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-blob: blob 10s infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0%); }
+  to   { transform: translateX(-100%); }
+}
+
+@keyframes blob {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  33%  { transform: translate(30px, -50px) scale(1.1); }
+  66%  { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
 }
 
 @layer base {
@@ -36,19 +76,20 @@
     padding-inline: 1.25rem;
   }
 
+  /* Updated to terracotta — new primary action colour */
   .btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: #17A2B8;
+    background-color: #DC745A;
     color: #fff;
     font-weight: 600;
     padding: 0.75rem 1.75rem;
-    border-radius: 0.5rem;
+    border-radius: 9999px;
     transition: background-color 0.2s;
   }
   .btn-primary:hover {
-    background-color: #138496;
+    background-color: #C25D44;
   }
 
   .btn-outline {
@@ -59,18 +100,18 @@
     color: #fff;
     font-weight: 600;
     padding: 0.75rem 1.75rem;
-    border-radius: 0.5rem;
+    border-radius: 9999px;
     transition: all 0.2s;
   }
   .btn-outline:hover {
     background-color: #fff;
-    color: #0F3460;
+    color: #1F473E;
   }
 
   .section-title {
     font-size: 2rem;
     font-weight: 700;
-    color: #0F3460;
+    color: #1F473E;
     margin-bottom: 0.75rem;
   }
 
@@ -78,5 +119,12 @@
     color: #64748B;
     font-size: 1.125rem;
     max-width: 600px;
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(202, 219, 210, 0.4);
   }
 }
