@@ -1,0 +1,105 @@
+---
+import Base from '../layouts/Base.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const faqs = [
+  {
+    q: 'Does TRS Pharmacy accept Medicare Part D?',
+    a: 'Yes, TRS Pharmacy is a Medicare Part D participating pharmacy. We accept Medicare Part D prescription drug plans. Call us at 346-230-4148 to verify your specific plan.',
+  },
+  {
+    q: 'Does TRS Pharmacy accept Medicaid or Texas CHIP?',
+    a: 'Yes, we accept Texas Medicaid and CHIP plans. We work with all major managed care organizations in Texas.',
+  },
+  {
+    q: 'What commercial insurance plans does TRS accept?',
+    a: 'We accept most major commercial insurance plans including Blue Cross Blue Shield, Aetna, Cigna, UnitedHealthcare, Humana, Ambetter, Molina Healthcare, Community Health Choice, Oscar Health, and Tricare. We do not currently accept MedImpact. Call us to verify your specific plan.',
+  },
+  {
+    q: 'What if I don\'t have insurance?',
+    a: 'No problem. As a nonprofit pharmacy, we are committed to making medications affordable for everyone. We offer self-pay pricing at cost plus a small dispensing fee — meaning you pay close to what we pay. We will always find you the best available price for your medications.',
+  },
+  {
+    q: 'Do you offer free prescription delivery?',
+    a: 'Yes! Free delivery is available within 10 miles of our Stafford, TX location. We also offer free delivery for any order of 3 or more prescriptions, regardless of distance. For 1–2 prescriptions outside the 10-mile radius, a $4 delivery fee applies.',
+  },
+  {
+    q: 'How do I transfer my prescriptions to TRS Pharmacy?',
+    a: 'Transferring is easy. Just call us at 346-230-4148 with your current pharmacy\'s name and phone number, and your prescription information. We\'ll handle the transfer for you. You can also visit us in person.',
+  },
+  {
+    q: 'Can I refill my prescription online?',
+    a: 'Yes. You can refill prescriptions 24/7 using the Rx365 mobile app (available on iOS and Android) or by calling our store during business hours.',
+  },
+  {
+    q: 'What vaccinations do you offer?',
+    a: 'We offer a full range of immunizations including flu, COVID-19, Shingles (Shingrix), Hepatitis A, Hepatitis B, HPV, MMR, meningococcal, pneumococcal, Tdap, and travel vaccines. Walk-ins are welcome.',
+  },
+  {
+    q: 'What is pharmacogenomics (PGx) testing?',
+    a: 'Pharmacogenomics testing analyzes your DNA to determine how you will respond to specific medications. This helps us — and your doctor — choose the right drug and dose the first time, reducing trial and error and minimizing side effects. For uninsured patients, the cost is $150–$300 and includes specimen collection, testing, interpretation, consultation, and lifetime updates.',
+  },
+  {
+    q: 'What are your hours?',
+    a: 'TRS Pharmacy is open Monday through Saturday, 9:00 AM to 5:00 PM. We are closed on Sundays.',
+  },
+  {
+    q: 'Where is TRS Pharmacy located?',
+    a: 'We are located at 3727 Greenbriar Dr, Suite 114, Stafford, TX 77477. We serve patients from Stafford, Sugar Land, Missouri City, SW Houston, Richmond, and Rosenberg.',
+  },
+  {
+    q: 'Is TRS Pharmacy a nonprofit?',
+    a: 'Yes. TRS Pharmacy — The Rising Sun Pharmacy — is a registered 501(c)(3) nonprofit organization. Our mission is to create a healthier society by providing compassionate, safe, and effective use of medications for all, regardless of income or insurance status.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+---
+
+<Base
+  title="FAQ | TRS Pharmacy Stafford TX — Insurance, Delivery, Hours & More"
+  description="Frequently asked questions about TRS Pharmacy in Stafford, TX. Does TRS accept Medicare, Medicaid, or self-pay? Do they offer free delivery? Learn about hours, location, and all services."
+  schema={faqSchema}
+>
+  <section class="bg-[#0F3460] text-white py-16">
+    <div class="container-site">
+      <h1 class="text-4xl font-extrabold mb-3">Frequently Asked Questions</h1>
+      <p class="text-white/80 text-lg">Everything you need to know about TRS Pharmacy — insurance, delivery, services, and more.</p>
+    </div>
+  </section>
+
+  <section class="container-site py-20 max-w-3xl mx-auto">
+    <div class="space-y-4">
+      {faqs.map((faq, i) => (
+        <details class="bg-white border border-gray-200 rounded-2xl shadow-sm group" id={`faq-${i}`}>
+          <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer font-semibold text-[#0F3460] hover:text-[#17A2B8] transition-colors list-none">
+            <span>{faq.q}</span>
+            <svg class="w-5 h-5 shrink-0 text-[#17A2B8] transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+          </summary>
+          <div class="px-6 pb-5 text-[#64748B] leading-relaxed text-sm border-t border-gray-100 pt-4">{faq.a}</div>
+        </details>
+      ))}
+    </div>
+    <div class="mt-12 bg-[#F8FAFC] border border-gray-200 rounded-2xl p-6 text-center">
+      <p class="font-bold text-[#0F3460] mb-2">Still have questions?</p>
+      <p class="text-[#64748B] text-sm mb-4">Call us or stop by — we're happy to help.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="tel:3462304148" class="btn-primary">Call 346-230-4148</a>
+        <a href="/contact" class="btn-outline !border-[#17A2B8] !text-[#17A2B8] hover:!bg-[#17A2B8] hover:!text-white">Contact Page</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</Base>

@@ -1,0 +1,88 @@
+---
+const services = [
+  { label: 'Immunizations', href: '/services/immunizations' },
+  { label: 'Diabetes Care', href: '/services/diabetes-care' },
+  { label: 'Free Delivery', href: '/services/prescription-delivery' },
+  { label: 'Precision Medicine', href: '/services/precision-medicine' },
+  { label: 'Nutrient Depletion', href: '/services/nutrient-depletion' },
+  { label: 'Point-of-Care Testing', href: '/services/point-of-care-testing' },
+  { label: 'Prescription Refills', href: '/services/prescription-refills' },
+  { label: 'Health Screenings', href: '/services/health-screenings' },
+];
+
+const locations = [
+  { label: 'Stafford, TX', href: '/pharmacy-stafford-tx' },
+  { label: 'Sugar Land, TX', href: '/pharmacy-sugar-land-tx' },
+  { label: 'Missouri City, TX', href: '/pharmacy-missouri-city-tx' },
+  { label: 'SW Houston', href: '/pharmacy-southwest-houston-tx' },
+  { label: 'Richmond / Rosenberg', href: '/pharmacy-richmond-rosenberg-tx' },
+];
+---
+
+<footer class="bg-[#0a2444] text-white mt-20">
+  <!-- Main footer grid -->
+  <div class="container-site py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <!-- Brand + NAP -->
+    <div class="md:col-span-1">
+      <p class="text-xl font-bold mb-1">TRS <span class="text-[#17A2B8]">Pharmacy</span></p>
+      <p class="text-white/60 text-sm mb-4">The Rising Sun Pharmacy<br>501(c)(3) Non-Profit</p>
+      <address class="not-italic text-sm text-white/80 leading-relaxed">
+        3727 Greenbriar Dr, Suite 114<br>
+        Stafford, TX 77477
+      </address>
+      <div class="mt-3 flex flex-col gap-1 text-sm">
+        <a href="tel:3462304148" class="text-[#17A2B8] hover:text-white font-semibold transition-colors">346-230-4148</a>
+        <a href="fax:3462190414" class="text-white/60 text-xs">Fax: 346-219-0414</a>
+        <a href="mailto:info@trspharmacy.org" class="text-white/60 hover:text-white text-xs transition-colors">info@trspharmacy.org</a>
+      </div>
+    </div>
+
+    <!-- Hours -->
+    <div>
+      <p class="font-bold text-sm uppercase tracking-widest text-[#17A2B8] mb-4">Hours</p>
+      <ul class="text-sm text-white/80 space-y-1">
+        <li class="flex justify-between gap-4"><span>Monday – Saturday</span><span>9 AM – 5 PM</span></li>
+        <li class="flex justify-between gap-4"><span>Sunday</span><span>Closed</span></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div>
+      <p class="font-bold text-sm uppercase tracking-widest text-[#17A2B8] mb-4">Services</p>
+      <ul class="text-sm space-y-1">
+        {services.map(s => (
+          <li><a href={s.href} class="text-white/70 hover:text-white transition-colors">{s.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Locations -->
+    <div>
+      <p class="font-bold text-sm uppercase tracking-widest text-[#17A2B8] mb-4">Areas Served</p>
+      <ul class="text-sm space-y-1 mb-6">
+        {locations.map(l => (
+          <li><a href={l.href} class="text-white/70 hover:text-white transition-colors">{l.label}</a></li>
+        ))}
+      </ul>
+      <p class="font-bold text-sm uppercase tracking-widest text-[#17A2B8] mb-3">Insurance</p>
+      <ul class="text-sm space-y-1">
+        <li><a href="/insurance-accepted" class="text-white/70 hover:text-white transition-colors">Insurance Accepted</a></li>
+        <li><a href="/self-pay-pharmacy" class="text-white/70 hover:text-white transition-colors">Self-Pay Pricing</a></li>
+        <li><a href="/faq" class="text-white/70 hover:text-white transition-colors">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-white/10">
+    <div class="container-site py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/50">
+      <p>&copy; {new Date().getFullYear()} TRS Pharmacy · 501(c)(3) Non-Profit Organization · Stafford, TX</p>
+      <div class="flex gap-4">
+        <a href="/privacy-policy" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="/contact" class="hover:text-white transition-colors">Contact</a>
+        <a href="https://www.facebook.com" rel="noopener noreferrer" class="hover:text-white transition-colors">Facebook</a>
+        <a href="https://www.instagram.com" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
+      </div>
+    </div>
+  </div>
+</footer>

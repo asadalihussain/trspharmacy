@@ -1,0 +1,79 @@
+---
+import Base from '../layouts/Base.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const plans = [
+  { category: 'Federal Programs', items: ['Medicare Part D', 'Medicaid (Texas)', 'CHIP (Children\'s Health Insurance)', 'Tricare'] },
+  { category: 'Commercial Insurance', items: ['Blue Cross Blue Shield of Texas', 'Aetna', 'Cigna', 'UnitedHealthcare', 'Humana', 'Oscar Health'] },
+  { category: 'Managed Care (Texas)', items: ['Ambetter from Superior Health Plan', 'Molina Healthcare of Texas', 'Community Health Choice', 'Centene / Superior', 'Magellan Rx'] },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Does TRS Pharmacy accept Medicare Part D?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, TRS Pharmacy accepts Medicare Part D prescription drug plans." } },
+    { "@type": "Question", "name": "Does TRS Pharmacy accept Medicaid?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, TRS Pharmacy accepts Texas Medicaid and CHIP plans." } },
+    { "@type": "Question", "name": "What insurance does TRS Pharmacy not accept?", "acceptedAnswer": { "@type": "Answer", "text": "TRS Pharmacy does not currently accept MedImpact. Please call us at 346-230-4148 to verify your specific plan." } },
+  ]
+};
+---
+
+<Base
+  title="Insurance Accepted at TRS Pharmacy | Stafford, TX — Medicare, Medicaid & More"
+  description="TRS Pharmacy in Stafford, TX accepts all major insurance including Medicare Part D, Medicaid, CHIP, Blue Cross, Aetna, Cigna, UnitedHealthcare, and more. We also offer the best self-pay pricing. Call 346-230-4148."
+  schema={faqSchema}
+>
+  <section class="bg-[#0F3460] text-white py-16">
+    <div class="container-site">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Insurance Accepted at TRS Pharmacy</h1>
+      <p class="text-white/80 text-lg max-w-2xl">We accept virtually all major insurance plans — Medicare, Medicaid, commercial plans, and managed care. No insurance? We find you the best possible price.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="tel:3462304148" class="btn-primary">Call to Verify Your Plan</a>
+        <a href="/self-pay-pharmacy" class="btn-outline">No Insurance? See Self-Pay Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-site py-20">
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      {plans.map(group => (
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <p class="font-bold text-[#17A2B8] text-sm uppercase tracking-widest mb-4">{group.category}</p>
+          <ul class="space-y-2">
+            {group.items.map(item => (
+              <li class="flex gap-3 text-sm text-[#1E293B]">
+                <svg class="w-4 h-4 text-[#17A2B8] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="max-w-3xl mx-auto bg-[#F8FAFC] border border-gray-200 rounded-2xl p-8">
+      <h2 class="text-2xl font-bold text-[#0F3460] mb-4">Important Notes</h2>
+      <ul class="space-y-3 text-sm text-[#64748B]">
+        <li class="flex gap-3">
+          <svg class="w-4 h-4 text-[#17A2B8] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" /></svg>
+          We do <strong class="text-[#0F3460]">not</strong> currently accept MedImpact. All other major plans are accepted.
+        </li>
+        <li class="flex gap-3">
+          <svg class="w-4 h-4 text-[#17A2B8] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+          Call us at <a href="tel:3462304148" class="font-semibold text-[#17A2B8]">346-230-4148</a> to verify your specific plan before visiting.
+        </li>
+        <li class="flex gap-3">
+          <svg class="w-4 h-4 text-[#17A2B8] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+          Even if your plan isn't listed, call us — we may still be able to help.
+        </li>
+        <li class="flex gap-3">
+          <svg class="w-4 h-4 text-[#17A2B8] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+          No insurance? See our <a href="/self-pay-pharmacy" class="font-semibold text-[#17A2B8]">self-pay pricing page</a> — we offer the best possible price as a nonprofit.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <CTABanner heading="Questions About Your Insurance?" ctaLabel="Call 346-230-4148" subtext="We're happy to verify your coverage before you come in. Call Monday through Saturday, 9 AM to 5 PM." />
+</Base>

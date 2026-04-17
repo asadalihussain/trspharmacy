@@ -1,0 +1,101 @@
+---
+import Base from '../layouts/Base.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "name": "TRS Pharmacy",
+  "alternateName": "The Rising Sun Pharmacy",
+  "description": "501(c)(3) nonprofit community pharmacy in Stafford, TX dedicated to compassionate, safe and effective use of medications for all.",
+  "foundingDate": "2020",
+  "nonprofitStatus": "Nonprofit501c3",
+  "employee": {
+    "@type": "Person",
+    "name": "Haroon Waseem",
+    "jobTitle": "Community Pharmacist",
+    "honorificSuffix": "RPh PharmD",
+    "alumniOf": "Xavier University of Louisiana"
+  }
+};
+
+const values = [
+  { title: 'Unity', body: 'We believe collaborative community solutions are the foundation for addressing health challenges.' },
+  { title: 'Justice', body: 'We create equitable systems that enable every person to live a healthy, balanced life.' },
+  { title: 'Compassion', body: 'Quality holistic healthcare — regardless of income, religion, or background.' },
+  { title: 'Leadership', body: 'Community-driven guidance implementing transformative healthcare solutions.' },
+  { title: 'Accountability', body: 'Transparent, responsible healthcare systems that you can trust.' },
+];
+---
+
+<Base
+  title="About TRS Pharmacy | Stafford TX Nonprofit Community Pharmacy"
+  description="Learn about TRS Pharmacy — The Rising Sun Pharmacy. A 501(c)(3) nonprofit community pharmacy in Stafford, TX dedicated to compassionate, accessible healthcare for all. Meet pharmacist Haroon Waseem, RPh PharmD."
+  schema={schema}
+>
+  <!-- PAGE HERO -->
+  <section class="bg-[#0F3460] text-white py-20">
+    <div class="container-site">
+      <p class="text-[#17A2B8] font-semibold text-sm uppercase tracking-widest mb-3">About TRS Pharmacy</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-5">The Rising Sun Pharmacy</h1>
+      <p class="text-white/80 text-lg max-w-2xl">A 501(c)(3) nonprofit community pharmacy in Stafford, TX — bringing compassionate, accessible healthcare to everyone, regardless of income or insurance status.</p>
+    </div>
+  </section>
+
+  <!-- MISSION + STORY -->
+  <section class="container-site py-20">
+    <div class="grid md:grid-cols-2 gap-16 items-start">
+      <div>
+        <h2 class="section-title">Our Mission</h2>
+        <p class="text-[#64748B] leading-relaxed mb-6">To create a healthier society by providing compassionate, safe, and effective use of medications for all.</p>
+        <h3 class="text-xl font-bold text-[#0F3460] mb-3">Our Vision</h3>
+        <p class="text-[#64748B] leading-relaxed mb-6">To establish a healthier Houston where comprehensive healthcare services are universally accessible, fostering community unity centered on human welfare.</p>
+        <h3 class="text-xl font-bold text-[#0F3460] mb-3">Why "The Rising Sun"?</h3>
+        <p class="text-[#64748B] leading-relaxed">The rising sun symbolizes hope and new beginnings — exactly what TRS Pharmacy represents for patients who have struggled to access affordable, high-quality healthcare. Every day is a new opportunity to serve this community better.</p>
+      </div>
+      <div class="bg-[#F8FAFC] rounded-2xl p-8 border border-gray-200">
+        <p class="text-[#17A2B8] font-semibold text-sm uppercase tracking-widest mb-4">Meet Your Pharmacist</p>
+        <p class="font-bold text-[#0F3460] text-2xl mb-1">Haroon Waseem</p>
+        <p class="text-[#17A2B8] font-semibold mb-5">RPh PharmD · Community Pharmacist & Founder</p>
+        <p class="text-[#64748B] leading-relaxed mb-4">A graduate of Xavier University of Louisiana, Dr. Waseem specializes in medication therapy management, alternative medicine, and chronic disease management. He founded TRS Pharmacy to address the healthcare gaps he witnessed firsthand in the Stafford and greater Houston area.</p>
+        <p class="text-[#64748B] leading-relaxed mb-6">His approach is deeply personal: every patient deserves the same quality of care regardless of their insurance status or financial situation. That philosophy is embedded into every aspect of how TRS operates.</p>
+        <blockquote class="border-l-4 border-[#17A2B8] pl-4 text-[#1E293B] italic text-sm">"Our mission is to create a healthier society through compassionate, safe, and effective use of medications for all."</blockquote>
+        <p class="mt-2 text-[#64748B] text-xs">— Haroon Waseem, RPh PharmD</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="bg-white border-y border-gray-200 py-20">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Our Core Values</h2>
+        <p class="section-sub mx-auto">Five principles guide every decision we make at TRS Pharmacy.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        {values.map((v, i) => (
+          <div class="bg-[#F8FAFC] rounded-2xl p-6 border border-gray-200 text-center">
+            <div class="w-10 h-10 bg-[#17A2B8] rounded-full flex items-center justify-center text-white font-bold text-sm mx-auto mb-3">{i + 1}</div>
+            <p class="font-bold text-[#0F3460] mb-2">{v.title}</p>
+            <p class="text-sm text-[#64748B]">{v.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 501c3 SECTION -->
+  <section class="container-site py-20">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="section-title">A Nonprofit You Can Trust</h2>
+      <p class="text-[#64748B] leading-relaxed mb-6">TRS Pharmacy is a registered 501(c)(3) nonprofit organization. That means we are legally required to put our mission — not profit — first. No shareholders. No quarterly earnings pressure. Just a commitment to your health and your community.</p>
+      <p class="text-[#64748B] leading-relaxed">We accept all major insurance plans and offer uninsured patients our best possible pricing: typically at our acquisition cost plus a small dispensing fee. We will always work with you to find the most affordable option.</p>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="btn-primary">Contact Us</a>
+        <a href="/services" class="btn-outline !border-[#17A2B8] !text-[#17A2B8] hover:!bg-[#17A2B8] hover:!text-white">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</Base>

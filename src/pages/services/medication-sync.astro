@@ -1,0 +1,56 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Base
+  title="Medication Synchronization in Stafford, TX | TRS Pharmacy"
+  description="TRS Pharmacy offers medication synchronization (Med Sync) in Stafford, TX — sync all your prescriptions to one monthly pickup or delivery date. Call 346-230-4148."
+>
+  <section class="bg-[#0F3460] text-white py-16">
+    <div class="container-site">
+      <nav class="text-sm text-white/60 mb-4">
+        <a href="/" class="hover:text-white">Home</a> / <a href="/services" class="hover:text-white">Services</a> / <span class="text-white">Medication Sync</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Medication Synchronization<br>in Stafford, TX</h1>
+      <p class="text-white/80 text-lg max-w-2xl">Stop making multiple pharmacy trips each month. Med Sync aligns all your prescription refills to one convenient date.</p>
+      <div class="mt-8">
+        <a href="tel:3462304148" class="btn-primary">Call 346-230-4148 to Enroll</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-site py-20 max-w-3xl mx-auto">
+    <h2 class="section-title">How Medication Synchronization Works</h2>
+    <p class="section-sub mb-10">Perfect for patients managing chronic conditions with multiple medications.</p>
+    <ol class="space-y-6">
+      {[
+        ['Enrollment Call', 'Call us at 346-230-4148 and tell us you want to enroll in Med Sync. Have your prescription list ready.'],
+        ['We Align Your Refills', 'We work out a target fill date that works for your schedule and align all your prescriptions to that date.'],
+        ['Monthly Reminder', 'We\'ll call or text you before each fill date so you\'re never caught off guard.'],
+        ['One Pickup or Delivery', 'Pick up all your medications in a single trip, or have them delivered together — free within 10 miles.'],
+      ].map(([step, desc], i) => (
+        <li class="flex gap-5">
+          <span class="w-10 h-10 bg-[#17A2B8] rounded-full flex items-center justify-center text-white font-bold shrink-0">{i + 1}</span>
+          <div>
+            <p class="font-bold text-[#0F3460] text-lg">{step}</p>
+            <p class="text-[#64748B] mt-1">{desc}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+    <div class="mt-12 bg-[#F8FAFC] border border-gray-200 rounded-2xl p-6">
+      <p class="font-bold text-[#0F3460] mb-3">Who Benefits Most from Med Sync?</p>
+      <ul class="space-y-2 text-sm text-[#64748B]">
+        {['Patients managing 3+ chronic medications', 'Patients who frequently miss refill dates', 'Caregivers managing medications for a family member', 'Anyone who wants to simplify their monthly pharmacy routine'].map(i => (
+          <li class="flex gap-3">
+            <svg class="w-4 h-4 text-[#17A2B8] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            {i}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <CTABanner heading="Simplify Your Prescriptions with Med Sync" ctaLabel="Call to Enroll — 346-230-4148" />
+</Base>

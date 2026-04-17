@@ -1,0 +1,58 @@
+---
+import Base from './Base.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  publishDate: string;
+  author?: string;
+  category?: string;
+}
+
+const { title, description, publishDate, author = 'TRS Pharmacy', category = 'Health & Wellness' } = Astro.props;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "author": { "@type": "Organization", "name": "TRS Pharmacy" },
+  "publisher": { "@type": "Organization", "name": "TRS Pharmacy", "url": "https://trspharmacy.org" },
+  "datePublished": publishDate,
+  "url": Astro.url.toString(),
+};
+---
+
+<Base title={`${title} | TRS Pharmacy Blog`} description={description} schema={articleSchema}>
+  <article>
+    <header class="bg-[#0F3460] text-white py-16">
+      <div class="container-site max-w-3xl">
+        <nav class="text-sm text-white/60 mb-4">
+          <a href="/" class="hover:text-white">Home</a> / <a href="/blog" class="hover:text-white">Blog</a> / <span class="text-white">{title}</span>
+        </nav>
+        <span class="inline-block bg-[#17A2B8] text-white text-xs font-bold px-3 py-1 rounded-full mb-4">{category}</span>
+        <h1 class="text-3xl md:text-4xl font-extrabold mb-4">{title}</h1>
+        <div class="flex items-center gap-4 text-white/60 text-sm">
+          <span>{author}</span>
+          <span>·</span>
+          <time datetime={publishDate}>{new Date(publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-site max-w-3xl py-16 prose prose-slate prose-headings:text-[#0F3460] prose-a:text-[#17A2B8] max-w-none">
+      <slot />
+    </div>
+
+    <div class="container-site max-w-3xl pb-12">
+      <div class="bg-[#F8FAFC] border border-gray-200 rounded-2xl p-6">
+        <p class="font-bold text-[#0F3460] mb-1">TRS Pharmacy · Stafford, TX</p>
+        <p class="text-sm text-[#64748B]">3727 Greenbriar Dr, Suite 114, Stafford, TX 77477 · <a href="tel:3462304148" class="text-[#17A2B8] font-semibold">346-230-4148</a> · Mon–Sat 9 AM–5 PM</p>
+        <p class="text-sm text-[#64748B] mt-1">501(c)(3) Nonprofit · All Insurance Accepted · Free Delivery</p>
+      </div>
+    </div>
+  </article>
+
+  <CTABanner />
+</Base>

@@ -1,0 +1,74 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import InsuranceGrid from '../../components/InsuranceGrid.astro';
+---
+
+<Base
+  title="Flu Test, Strep Test & COVID Testing in Stafford, TX | TRS Pharmacy"
+  description="Get rapid flu, strep, and COVID-19 testing at TRS Pharmacy in Stafford, TX. No appointment needed. Results in minutes. All insurance accepted. Call 346-230-4148."
+>
+  <section class="bg-[#0F3460] text-white py-16">
+    <div class="container-site">
+      <nav class="text-sm text-white/60 mb-4">
+        <a href="/" class="hover:text-white">Home</a> / <a href="/services" class="hover:text-white">Services</a> / <span class="text-white">Point-of-Care Testing</span>
+      </nav>
+      <span class="inline-block bg-[#17A2B8] text-white text-xs font-bold px-3 py-1 rounded-full mb-4">No Appointment Needed</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Flu, Strep & COVID Testing<br>in Stafford, TX</h1>
+      <p class="text-white/80 text-lg max-w-2xl">Don't wait for a doctor's office. Get rapid diagnostic testing at TRS Pharmacy — walk in, get tested, get answers.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="tel:3462304148" class="btn-primary">Call 346-230-4148</a>
+        <a href="/contact" class="btn-outline">Visit Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-site py-20">
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      {[
+        { title: 'Flu Testing', desc: 'Rapid influenza A & B antigen test. Results in 15 minutes. Available during flu season year-round.' },
+        { title: 'Strep Testing', desc: 'Rapid strep throat test. Results in minutes so you can start treatment the same day.' },
+        { title: 'COVID-19 Testing', desc: 'RT-PCR, Rapid Antigen, and Antibody tests available. Ask about current availability.' },
+      ].map(t => (
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm text-center">
+          <p class="font-bold text-[#0F3460] text-lg mb-3">{t.title}</p>
+          <p class="text-sm text-[#64748B]">{t.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-16">
+      <div>
+        <h2 class="section-title">Why Get Tested at TRS?</h2>
+        <ul class="space-y-4 mt-6">
+          {[
+            'No appointment required — walk in during business hours',
+            'Fast results — most tests completed in under 20 minutes',
+            'All major insurance accepted, including Medicare and Medicaid',
+            'Affordable self-pay pricing',
+            'If you test positive, our pharmacist can immediately coordinate treatment options',
+          ].map(item => (
+            <li class="flex gap-3 text-sm text-[#64748B]">
+              <svg class="w-4 h-4 text-[#17A2B8] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="space-y-5">
+        <div class="bg-[#F8FAFC] rounded-2xl border border-gray-200 p-6">
+          <p class="font-bold text-[#0F3460] mb-3">Location & Hours</p>
+          <p class="text-sm text-[#64748B]">3727 Greenbriar Dr, Suite 114<br>Stafford, TX 77477</p>
+          <p class="text-sm text-[#64748B] mt-2">Mon – Sat: 9:00 AM – 5:00 PM</p>
+          <a href="tel:3462304148" class="mt-3 inline-block text-[#17A2B8] font-semibold text-sm hover:underline">Call 346-230-4148</a>
+        </div>
+        <InsuranceGrid />
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    heading="Walk In for Rapid Testing Today"
+    subtext="No appointment needed. TRS Pharmacy in Stafford, TX is open Monday through Saturday, 9 AM to 5 PM."
+  />
+</Base>

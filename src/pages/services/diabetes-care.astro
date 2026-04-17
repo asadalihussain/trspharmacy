@@ -1,0 +1,71 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import InsuranceGrid from '../../components/InsuranceGrid.astro';
+---
+
+<Base
+  title="Diabetes Care Pharmacy in Stafford, TX | TRS Pharmacy"
+  description="TRS Pharmacy in Stafford, TX provides specialized diabetes care for Type 1, Type 2, and Gestational Diabetes. Medication management, monitoring, and patient education. All insurance accepted."
+>
+  <section class="bg-[#0F3460] text-white py-16">
+    <div class="container-site">
+      <nav class="text-sm text-white/60 mb-4">
+        <a href="/" class="hover:text-white">Home</a> / <a href="/services" class="hover:text-white">Services</a> / <span class="text-white">Diabetes Care</span>
+      </nav>
+      <span class="inline-block bg-[#17A2B8] text-white text-xs font-bold px-3 py-1 rounded-full mb-4">Specialty Service</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Diabetes Care Center<br>in Stafford, TX</h1>
+      <p class="text-white/80 text-lg max-w-2xl">Specialized pharmacy support for patients managing Type 1, Type 2, and Gestational Diabetes. We go beyond dispensing — we partner with you in your care.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="tel:3462304148" class="btn-primary">Call 346-230-4148</a>
+        <a href="/contact" class="btn-outline">Request Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-site py-20">
+    <div class="grid md:grid-cols-2 gap-16">
+      <div>
+        <h2 class="section-title">What Our Diabetes Care Includes</h2>
+        <ul class="space-y-5 mt-6">
+          {[
+            ['Medication Management', 'We ensure you have the right diabetes medications — insulin, oral agents, GLP-1s — and help you manage refills on schedule.'],
+            ['Patient Education', 'Learn how to monitor your blood glucose, understand your A1C, and make lifestyle adjustments that support your treatment.'],
+            ['Personalized Recommendations', 'Dr. Waseem provides individualized recommendations based on your type of diabetes, comorbidities, and goals.'],
+            ['Monitoring Support', 'Guidance on glucose meters, CGMs, and interpreting your readings.'],
+            ['Adherence Programs', 'Medication synchronization and adherence counseling to help you stay on track.'],
+          ].map(([title, body]) => (
+            <li class="flex gap-4">
+              <span class="mt-1 w-5 h-5 bg-[#17A2B8]/10 rounded-full flex items-center justify-center shrink-0">
+                <svg class="w-3 h-3 text-[#17A2B8]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd"/></svg>
+              </span>
+              <div>
+                <p class="font-semibold text-[#0F3460]">{title}</p>
+                <p class="text-sm text-[#64748B] mt-1">{body}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="space-y-6">
+        <div class="bg-[#F8FAFC] rounded-2xl border border-gray-200 p-6">
+          <h3 class="font-bold text-[#0F3460] mb-3">Types of Diabetes We Serve</h3>
+          <div class="flex flex-col gap-3">
+            {[['Type 1 Diabetes', 'Insulin-dependent management and education'], ['Type 2 Diabetes', 'Medication optimization, lifestyle coaching, A1C monitoring'], ['Gestational Diabetes', 'Safe medication options during pregnancy, monitoring support']].map(([type, desc]) => (
+              <div class="bg-white border border-gray-200 rounded-xl p-4">
+                <p class="font-semibold text-[#0F3460] text-sm">{type}</p>
+                <p class="text-xs text-[#64748B] mt-1">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <InsuranceGrid />
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    heading="Specialized Diabetes Support in Stafford, TX"
+    subtext="Call or visit TRS Pharmacy to speak with Dr. Waseem about your diabetes care. All insurance accepted, including Medicare and Medicaid."
+  />
+</Base>

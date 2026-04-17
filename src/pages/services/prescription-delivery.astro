@@ -1,0 +1,82 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Base
+  title="Free Prescription Delivery in Stafford, TX | TRS Pharmacy"
+  description="TRS Pharmacy offers free prescription delivery in Stafford, TX and within 10 miles — including Sugar Land, Missouri City, and SW Houston. Free for 3+ prescriptions anywhere. Call 346-230-4148."
+>
+  <section class="bg-[#0F3460] text-white py-16">
+    <div class="container-site">
+      <nav class="text-sm text-white/60 mb-4">
+        <a href="/" class="hover:text-white">Home</a> / <a href="/services" class="hover:text-white">Services</a> / <span class="text-white">Free Delivery</span>
+      </nav>
+      <span class="inline-block bg-[#17A2B8] text-white text-xs font-bold px-3 py-1 rounded-full mb-4">Free</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Free Prescription Delivery<br>in Stafford, TX</h1>
+      <p class="text-white/80 text-lg max-w-2xl">Get your medications delivered to your door — free within 10 miles, or free for any order of 3 or more prescriptions anywhere in the area.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="tel:3462304148" class="btn-primary">Call to Schedule Delivery</a>
+        <a href="/contact" class="btn-outline">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-site py-20">
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      {[
+        { title: 'Within 10 Miles', detail: 'Free delivery on all prescriptions', sub: 'Stafford, parts of Sugar Land, Missouri City & SW Houston' },
+        { title: '3+ Prescriptions', detail: 'Free delivery anywhere we serve', sub: 'No distance limit when you have 3 or more Rx' },
+        { title: '1–2 Prescriptions', detail: '$4 outside the 10-mile radius', sub: 'Still one of the lowest delivery fees in the area' },
+      ].map(card => (
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm text-center">
+          <p class="font-bold text-[#0F3460] text-xl mb-2">{card.title}</p>
+          <p class="text-[#17A2B8] font-semibold mb-2">{card.detail}</p>
+          <p class="text-sm text-[#64748B]">{card.sub}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-16 items-start">
+      <div>
+        <h2 class="section-title">How Delivery Works</h2>
+        <ol class="space-y-5 mt-6">
+          {[
+            ['Call or use the Rx365 app', 'Place your refill request by phone at 346-230-4148 or through the Rx365 mobile app 24/7.'],
+            ['We prepare your order', 'Our pharmacist reviews and fills your prescription, performing a drug interaction check.'],
+            ['Delivery is scheduled', 'We coordinate a delivery time that works for you — same day or next day in most cases.'],
+            ['Your medication arrives', 'Delivered safely to your door. Signature may be required for certain controlled substances.'],
+          ].map(([step, desc], i) => (
+            <li class="flex gap-4">
+              <span class="w-8 h-8 bg-[#17A2B8] rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0">{i + 1}</span>
+              <div>
+                <p class="font-semibold text-[#0F3460]">{step}</p>
+                <p class="text-sm text-[#64748B] mt-1">{desc}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <div class="space-y-5">
+        <div class="bg-[#F8FAFC] rounded-2xl border border-gray-200 p-6">
+          <h3 class="font-bold text-[#0F3460] mb-3">Also Available</h3>
+          <ul class="space-y-2 text-sm text-[#64748B]">
+            <li class="flex gap-2"><span class="text-[#17A2B8]">✓</span> Curbside pickup</li>
+            <li class="flex gap-2"><span class="text-[#17A2B8]">✓</span> Mail-order prescriptions</li>
+            <li class="flex gap-2"><span class="text-[#17A2B8]">✓</span> 24/7 online refills via Rx365 app</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <p class="font-bold text-[#0F3460] mb-2">Delivery Area</p>
+          <p class="text-sm text-[#64748B]">We serve Stafford, Sugar Land, Missouri City, southwest Houston (77036, 77072, 77099), Richmond, and Rosenberg.</p>
+          <a href="/pharmacy-stafford-tx" class="mt-3 inline-block text-[#17A2B8] text-sm font-semibold hover:underline">See all service areas →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    heading="Schedule Your Free Prescription Delivery"
+    subtext="Call TRS Pharmacy at 346-230-4148 to set up delivery, or download the Rx365 app to manage your prescriptions 24/7."
+  />
+</Base>

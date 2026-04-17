@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const services = [
+  { title: 'Immunizations & Vaccines', desc: 'Flu, COVID, Shingles, Hepatitis A & B, HPV, MMR, pneumococcal, meningococcal, Tdap, and travel vaccines. Walk-ins welcome.', href: '/services/immunizations', badge: 'Walk-ins Welcome' },
+  { title: 'Diabetes Care Center', desc: 'Specialized pharmacy care for Type 1, Type 2, and Gestational Diabetes — monitoring, medication management, and patient education.', href: '/services/diabetes-care', badge: 'Specialty Service' },
+  { title: 'Free Prescription Delivery', desc: 'Free delivery within 10 miles of Stafford or for any order of 3+ prescriptions. $4 for 1–2 Rx outside the 10-mile radius.', href: '/services/prescription-delivery', badge: 'Free' },
+  { title: 'Precision Medicine (PGx)', desc: 'Pharmacogenomics testing reveals how your genes affect medication response. Priced $150–$300 for uninsured patients.', href: '/services/precision-medicine', badge: 'Advanced Care' },
+  { title: 'Point-of-Care Testing', desc: 'Rapid in-store testing for flu, strep throat, and COVID-19 (RT-PCR, rapid antigen, antibody). No appointment needed.', href: '/services/point-of-care-testing', badge: 'No Appt Needed' },
+  { title: 'Nutrient Depletion Analysis', desc: 'Identify vitamins and minerals depleted by your medications. Includes complimentary nutritional starter packs.', href: '/services/nutrient-depletion', badge: 'Consultation Included' },
+  { title: 'Prescription Refills & Transfers', desc: 'Refill online 24/7 via the Rx365 app, or transfer all your prescriptions to TRS in one simple call.', href: '/services/prescription-refills', badge: 'Online Available' },
+  { title: 'Medication Synchronization', desc: 'Sync all your prescriptions to one monthly pick-up or delivery date. One less thing to manage.', href: '/services/medication-sync', badge: 'Convenience' },
+  { title: 'Health Screenings', desc: 'Blood pressure, blood glucose, and other health screenings — free or low-cost for the community.', href: '/services/health-screenings', badge: 'Community Benefit' },
+];
+---
+
+<Base
+  title="Pharmacy Services in Stafford, TX | TRS Pharmacy"
+  description="TRS Pharmacy in Stafford, TX offers immunizations, diabetes care, free delivery, pharmacogenomics (PGx) testing, point-of-care testing, nutrient depletion analysis, and more. All insurance accepted."
+>
+  <section class="bg-[#0F3460] text-white py-16">
+    <div class="container-site">
+      <p class="text-[#17A2B8] font-semibold text-sm uppercase tracking-widest mb-3">TRS Pharmacy · Stafford, TX</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Pharmacy Services</h1>
+      <p class="text-white/80 text-lg max-w-2xl">Comprehensive pharmacy services for every member of your family — from routine refills to specialized clinical care. All major insurance accepted.</p>
+    </div>
+  </section>
+
+  <section class="container-site py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map(s => (
+        <a href={s.href} class="group bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md hover:border-[#17A2B8] transition-all flex flex-col">
+          {s.badge && <span class="inline-block bg-[#17A2B8]/10 text-[#17A2B8] text-xs font-bold px-3 py-1 rounded-full mb-3 self-start">{s.badge}</span>}
+          <h2 class="font-bold text-[#0F3460] text-lg mb-2 group-hover:text-[#17A2B8] transition-colors">{s.title}</h2>
+          <p class="text-sm text-[#64748B] leading-relaxed flex-1">{s.desc}</p>
+          <p class="mt-5 text-[#17A2B8] text-sm font-semibold">Learn more →</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <CTABanner />
+</Base>

@@ -1,0 +1,71 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import InsuranceGrid from '../../components/InsuranceGrid.astro';
+---
+
+<Base
+  title="Prescription Refills & Transfers in Stafford, TX | TRS Pharmacy"
+  description="Refill or transfer your prescriptions at TRS Pharmacy in Stafford, TX. Online refills via the Rx365 app, phone-in transfers from any pharmacy. All insurance accepted. Call 346-230-4148."
+>
+  <section class="bg-[#0F3460] text-white py-16">
+    <div class="container-site">
+      <nav class="text-sm text-white/60 mb-4">
+        <a href="/" class="hover:text-white">Home</a> / <a href="/services" class="hover:text-white">Services</a> / <span class="text-white">Refills & Transfers</span>
+      </nav>
+      <span class="inline-block bg-[#17A2B8] text-white text-xs font-bold px-3 py-1 rounded-full mb-4">Online Available</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Prescription Refills &<br>Transfers in Stafford, TX</h1>
+      <p class="text-white/80 text-lg max-w-2xl">Easy refills online or by phone. Transfer all your prescriptions to TRS in one call — we handle everything.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="tel:3462304148" class="btn-primary">Call to Transfer — 346-230-4148</a>
+        <a href="/contact" class="btn-outline">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-site py-20">
+    <div class="grid md:grid-cols-2 gap-16">
+      <div>
+        <h2 class="section-title">Refill Your Prescription</h2>
+        <p class="text-[#64748B] mb-6">Three easy ways to refill:</p>
+        <div class="space-y-4">
+          {[
+            { method: 'Rx365 Mobile App', desc: 'Download on iOS or Android. Refill 24/7, set reminders, view your prescription history.', badge: 'Recommended' },
+            { method: 'Call Us', desc: 'Call 346-230-4148 during business hours (Mon–Sat, 9 AM–5 PM) and we\'ll have your order ready.', badge: null },
+            { method: 'Visit In Store', desc: 'Stop by 3727 Greenbriar Dr, Suite 114, Stafford, TX 77477. Curbside pickup available.', badge: null },
+          ].map(opt => (
+            <div class="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm">
+              <div class="flex items-center gap-3 mb-2">
+                <p class="font-bold text-[#0F3460]">{opt.method}</p>
+                {opt.badge && <span class="bg-[#17A2B8]/10 text-[#17A2B8] text-xs font-bold px-2 py-0.5 rounded-full">{opt.badge}</span>}
+              </div>
+              <p class="text-sm text-[#64748B]">{opt.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="section-title mt-12">Transfer Your Prescriptions</h2>
+        <p class="text-[#64748B] mb-4">Transferring to TRS is easy. Just call us with:</p>
+        <ul class="space-y-2 text-sm text-[#64748B]">
+          {['Your current pharmacy\'s name and phone number', 'Your prescription name(s) and Rx number(s)', 'Your date of birth for verification'].map(i => (
+            <li class="flex gap-3">
+              <svg class="w-4 h-4 text-[#17A2B8] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              {i}
+            </li>
+          ))}
+        </ul>
+        <p class="text-sm text-[#64748B] mt-4">We'll call your old pharmacy and handle the rest. Most transfers are completed within a few hours.</p>
+      </div>
+      <div class="space-y-6">
+        <div class="bg-[#F8FAFC] rounded-2xl border border-gray-200 p-6">
+          <p class="font-bold text-[#0F3460] mb-3">Medication Synchronization</p>
+          <p class="text-sm text-[#64748B]">Sync all your prescriptions to one monthly fill date. One pickup, one delivery — instead of multiple trips all month. Ask us about Med Sync when you call.</p>
+          <a href="/services/medication-sync" class="mt-3 inline-block text-[#17A2B8] font-semibold text-sm hover:underline">Learn about Med Sync →</a>
+        </div>
+        <InsuranceGrid />
+      </div>
+    </div>
+  </section>
+
+  <CTABanner heading="Transfer Your Prescriptions to TRS Today" ctaLabel="Call 346-230-4148" />
+</Base>

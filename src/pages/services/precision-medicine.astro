@@ -1,0 +1,86 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import InsuranceGrid from '../../components/InsuranceGrid.astro';
+---
+
+<Base
+  title="Pharmacogenomics (PGx) Testing in Stafford, TX | TRS Pharmacy"
+  description="TRS Pharmacy offers pharmacogenomics (PGx) precision medicine testing in Stafford, TX. Find the right medication for your genetic profile. $150–$300 for uninsured patients. All insurance accepted."
+>
+  <section class="bg-[#0F3460] text-white py-16">
+    <div class="container-site">
+      <nav class="text-sm text-white/60 mb-4">
+        <a href="/" class="hover:text-white">Home</a> / <a href="/services" class="hover:text-white">Services</a> / <span class="text-white">Precision Medicine</span>
+      </nav>
+      <span class="inline-block bg-[#17A2B8] text-white text-xs font-bold px-3 py-1 rounded-full mb-4">Advanced Care</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Precision Medicine &<br>PGx Testing in Stafford, TX</h1>
+      <p class="text-white/80 text-lg max-w-2xl">Pharmacogenomics (PGx) uses your DNA to find the right medications and doses for you — eliminating costly trial and error.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="tel:3462304148" class="btn-primary">Call for a Consultation</a>
+        <a href="/contact" class="btn-outline">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-site py-20">
+    <div class="grid md:grid-cols-2 gap-16">
+      <div>
+        <h2 class="section-title">What is Pharmacogenomics?</h2>
+        <p class="text-[#64748B] leading-relaxed mb-6">Pharmacogenomics (PGx) is the science of how your genes affect your response to medications. Instead of trial-and-error prescribing based only on your age, weight, and organ function, PGx testing analyzes your unique genetic profile to predict which medications will work best — and which ones might cause problems.</p>
+        <h3 class="text-xl font-bold text-[#0F3460] mb-4">When Is PGx Testing Recommended?</h3>
+        <ul class="space-y-3">
+          {[
+            'To minimize or prevent serious medication side effects',
+            'When adjusting current medication doses or seeking alternatives',
+            'To identify medications with a higher likelihood of success before starting them',
+            'For complex conditions requiring multiple medications',
+            'When you have had unexpected reactions to medications in the past',
+          ].map(item => (
+            <li class="flex gap-3 text-sm text-[#64748B]">
+              <svg class="w-4 h-4 text-[#17A2B8] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="space-y-6">
+        <div class="bg-[#F8FAFC] rounded-2xl border border-gray-200 p-6">
+          <h3 class="font-bold text-[#0F3460] mb-4">How It Works</h3>
+          <ol class="space-y-4">
+            {[
+              ['Consultation', 'Speak with Dr. Waseem about your current medications and health history.'],
+              ['Sample Collection', 'A simple cheek swab — no needles, no blood draw.'],
+              ['Lab Analysis', 'Your DNA sample is analyzed at a certified laboratory.'],
+              ['Personalized Report', 'You receive a detailed pharmacogenomics report.'],
+              ['Follow-Up Consultation', 'Dr. Waseem reviews your results and provides specific medication recommendations.'],
+              ['Lifetime Updates', 'Your genetic profile stays on file — as new drugs become available, it can be applied again.'],
+            ].map(([step, desc], i) => (
+              <li class="flex gap-4">
+                <span class="w-6 h-6 bg-[#17A2B8] rounded-full flex items-center justify-center text-white font-bold text-xs shrink-0">{i + 1}</span>
+                <div>
+                  <p class="font-semibold text-[#0F3460] text-sm">{step}</p>
+                  <p class="text-xs text-[#64748B]">{desc}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <p class="font-bold text-[#0F3460] mb-3">Pricing</p>
+          <ul class="space-y-2 text-sm text-[#64748B]">
+            <li><strong class="text-[#0F3460]">Insured patients:</strong> Coverage varies by plan — call us to verify.</li>
+            <li><strong class="text-[#0F3460]">Uninsured / self-pay:</strong> $150–$300 maximum. Includes specimen collection, testing, interpretation, consultation, and lifetime updates.</li>
+          </ul>
+        </div>
+        <InsuranceGrid />
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    heading="Find the Right Medication the First Time"
+    subtext="Schedule a pharmacogenomics consultation at TRS Pharmacy in Stafford, TX. We accept all major insurance and offer self-pay pricing."
+    ctaLabel="Call 346-230-4148"
+  />
+</Base>

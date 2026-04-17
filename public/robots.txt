@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://trspharmacy.org/sitemap-index.xml

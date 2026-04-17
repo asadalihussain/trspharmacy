@@ -1,0 +1,19 @@
+# Redirects from old Digital Pharmacist URLs to new paths
+/about-us           /about              301
+/about-us/          /about              301
+/med-info           /faq                301
+/med-info/          /faq                301
+/health-news        /blog               301
+/health-news/       /blog               301
+/mobile             /services/prescription-refills  301
+/mobile/            /services/prescription-refills  301
+
+# Service redirects
+/services/delivery  /services/prescription-delivery  301
+/delivery-rx        /services/prescription-delivery  301
+/deliveryrx         /services/prescription-delivery  301
+/immunization       /services/immunizations          301
+/point-of-care      /services/point-of-care-testing  301
+/diabetes           /services/diabetes-care          301
+/precision-medicine /services/precision-medicine     301
+/nutrient-depletion /services/nutrient-depletion     301

@@ -1,0 +1,56 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import InsuranceGrid from '../../components/InsuranceGrid.astro';
+---
+
+<Base
+  title="Health Screenings in Stafford, TX | TRS Pharmacy"
+  description="TRS Pharmacy in Stafford, TX offers free and low-cost health screenings — blood pressure, blood glucose, and more. All insurance accepted. Open Mon–Sat, 9 AM–5 PM."
+>
+  <section class="bg-[#0F3460] text-white py-16">
+    <div class="container-site">
+      <nav class="text-sm text-white/60 mb-4">
+        <a href="/" class="hover:text-white">Home</a> / <a href="/services" class="hover:text-white">Services</a> / <span class="text-white">Health Screenings</span>
+      </nav>
+      <span class="inline-block bg-[#17A2B8] text-white text-xs font-bold px-3 py-1 rounded-full mb-4">Community Benefit</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Health Screenings<br>in Stafford, TX</h1>
+      <p class="text-white/80 text-lg max-w-2xl">Free and low-cost health screenings to help you stay ahead of chronic conditions. No appointment needed for most screenings.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="tel:3462304148" class="btn-primary">Call 346-230-4148</a>
+        <a href="/contact" class="btn-outline">Visit Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-site py-20">
+    <div class="grid md:grid-cols-2 gap-16">
+      <div>
+        <h2 class="section-title">Screenings Offered</h2>
+        <div class="mt-6 space-y-4">
+          {[
+            ['Blood Pressure', 'High blood pressure often has no symptoms. A quick check can catch problems early.'],
+            ['Blood Glucose', 'Identify pre-diabetes or uncontrolled diabetes before it causes complications.'],
+            ['Medication Therapy Review', 'A comprehensive review of all your medications to optimize safety and effectiveness.'],
+            ['General Wellness Consultation', 'Talk to Dr. Waseem about your health goals and current medication regimen.'],
+          ].map(([title, desc]) => (
+            <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+              <p class="font-bold text-[#0F3460] mb-1">{title}</p>
+              <p class="text-sm text-[#64748B]">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="space-y-6">
+        <div class="bg-[#F8FAFC] rounded-2xl border border-gray-200 p-6">
+          <h3 class="font-bold text-[#0F3460] mb-3">Why Early Screening Matters</h3>
+          <p class="text-sm text-[#64748B] leading-relaxed">Conditions like hypertension, diabetes, and high cholesterol develop silently. Regular screening at your local pharmacy is one of the easiest, most accessible ways to catch these conditions early — before they require expensive interventions.</p>
+          <p class="text-sm text-[#64748B] mt-3">As a 501(c)(3) nonprofit, TRS Pharmacy is committed to keeping these screenings accessible and affordable for everyone in Stafford, TX and the surrounding community.</p>
+        </div>
+        <InsuranceGrid />
+      </div>
+    </div>
+  </section>
+
+  <CTABanner heading="Free Health Screenings in Stafford, TX" subtext="Visit TRS Pharmacy at 3727 Greenbriar Dr, Suite 114, Stafford, TX. Open Monday through Saturday, 9 AM to 5 PM." />
+</Base>

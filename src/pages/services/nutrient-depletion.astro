@@ -1,0 +1,74 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTABanner from '../../components/CTABanner.astro';
+---
+
+<Base
+  title="Nutrient Depletion Analysis in Stafford, TX | TRS Pharmacy"
+  description="TRS Pharmacy in Stafford, TX offers nutrient depletion consultations — identifying vitamins and minerals depleted by your medications. Free starter packs included. Call 346-230-4148."
+>
+  <section class="bg-[#0F3460] text-white py-16">
+    <div class="container-site">
+      <nav class="text-sm text-white/60 mb-4">
+        <a href="/" class="hover:text-white">Home</a> / <a href="/services" class="hover:text-white">Services</a> / <span class="text-white">Nutrient Depletion</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Nutrient Depletion Analysis<br>in Stafford, TX</h1>
+      <p class="text-white/80 text-lg max-w-2xl">Did you know your medications may be depleting essential vitamins and minerals? Our analysis helps you stay healthy while on your current prescriptions.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="tel:3462304148" class="btn-primary">Call 346-230-4148</a>
+        <a href="/contact" class="btn-outline">Schedule Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-site py-20">
+    <div class="grid md:grid-cols-2 gap-16">
+      <div>
+        <h2 class="section-title">What Is Drug-Induced Nutrient Depletion?</h2>
+        <p class="text-[#64748B] leading-relaxed mb-6">Many common prescription medications — including statins, proton pump inhibitors, metformin, and blood pressure drugs — can deplete essential vitamins and minerals over time. This can lead to fatigue, sleep problems, muscle weakness, and other issues that are often dismissed or misattributed.</p>
+        <p class="text-[#64748B] leading-relaxed mb-6">Our nutrient depletion consultation identifies which nutrients your specific medications may be affecting and provides safe, clinically-tested supplement recommendations to restore balance.</p>
+        <h3 class="text-xl font-bold text-[#0F3460] mb-4">Common Concerns We Address</h3>
+        <ul class="space-y-2">
+          {['Unexplained fatigue or low energy', 'Difficulty sleeping', 'Muscle aches or weakness', 'Preventable medication side effects', 'General wellness optimization'].map(i => (
+            <li class="flex gap-3 text-sm text-[#64748B]">
+              <svg class="w-4 h-4 text-[#17A2B8] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+              {i}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="space-y-6">
+        <div class="bg-[#F8FAFC] rounded-2xl border border-gray-200 p-6">
+          <h3 class="font-bold text-[#0F3460] mb-4">How It Works</h3>
+          <ol class="space-y-4">
+            {[
+              'We review your current prescriptions and medical history',
+              'Identify potential nutrient depletions specific to your medications',
+              'Discuss dietary modifications that support your health',
+              'Recommend clinically-tested, curated supplements if needed',
+              'Provide a complimentary nutritional starter pack',
+            ].map((step, i) => (
+              <li class="flex gap-3">
+                <span class="w-6 h-6 bg-[#17A2B8] rounded-full flex items-center justify-center text-white font-bold text-xs shrink-0">{i + 1}</span>
+                <span class="text-sm text-[#64748B]">{step}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <p class="font-bold text-[#0F3460] mb-3">Supplements Available In-Store</p>
+          <div class="flex flex-wrap gap-2 text-xs">
+            {['Probiotics', 'B-Complex', 'Vitamin C', 'Vitamin D', 'Multivitamins', 'Magnesium', 'Calcium', 'Zinc', 'Iron', 'CoQ10', 'Fish Oil', 'Melatonin', 'Elderberry'].map(s => (
+              <span class="bg-[#F8FAFC] border border-gray-200 px-2 py-1 rounded-full text-[#64748B]">{s}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    heading="Book a Nutrient Depletion Consultation"
+    subtext="Call TRS Pharmacy in Stafford, TX. Complimentary nutritional starter pack included with your consultation."
+  />
+</Base>

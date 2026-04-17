@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const posts = [
+  { title: 'Why You Should Choose a Local Pharmacy', slug: 'why-choose-local-pharmacy', date: '2024-01-15', category: 'Community', desc: 'A local, independent pharmacy offers personalized care, faster service, and a real relationship with your pharmacist — something chain pharmacies simply can\'t match.' },
+  { title: '4 Ways to Build Healthy Habits in Kids', slug: 'healthy-habits-kids', date: '2024-02-03', category: 'Family Health', desc: 'The start of the year is a great time to build lasting wellness routines for your children. Here are four evidence-based strategies.' },
+  { title: 'How Stress Relates to Heart Disease', slug: 'how-stress-relates-heart-disease', date: '2024-03-12', category: 'Heart Health', desc: 'Chronic stress is a well-documented risk factor for cardiovascular disease. Learn how to manage stress — and when to talk to your pharmacist.' },
+  { title: 'How to Transfer Your Prescriptions to a New Pharmacy', slug: 'how-to-transfer-prescriptions', date: '2024-04-05', category: 'Pharmacy Tips', desc: 'Switching pharmacies is easier than you think. Here\'s a step-by-step guide to transferring your prescriptions to TRS Pharmacy in Stafford, TX.' },
+  { title: 'What is Pharmacogenomics? The Future of Personalized Medicine', slug: 'what-is-pharmacogenomics', date: '2024-05-20', category: 'Precision Medicine', desc: 'Pharmacogenomics uses your DNA to predict how you\'ll respond to medications. TRS Pharmacy in Stafford, TX offers PGx testing for $150–$300.' },
+];
+---
+
+<Base
+  title="Health & Pharmacy Blog | TRS Pharmacy Stafford, TX"
+  description="Health tips, pharmacy guides, and medication advice from TRS Pharmacy — the nonprofit community pharmacy in Stafford, TX. Serving Sugar Land, Missouri City, and SW Houston."
+>
+  <section class="bg-[#0F3460] text-white py-16">
+    <div class="container-site">
+      <h1 class="text-4xl font-extrabold mb-3">Health & Pharmacy Blog</h1>
+      <p class="text-white/80 text-lg">Tips, guides, and health news from TRS Pharmacy in Stafford, TX.</p>
+    </div>
+  </section>
+
+  <section class="container-site py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {posts.map(post => (
+        <a href={`/blog/${post.slug}`} class="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-[#17A2B8] transition-all flex flex-col overflow-hidden">
+          <div class="p-6 flex flex-col flex-1">
+            <span class="inline-block bg-[#17A2B8]/10 text-[#17A2B8] text-xs font-bold px-3 py-1 rounded-full mb-3 self-start">{post.category}</span>
+            <h2 class="font-bold text-[#0F3460] text-lg mb-2 group-hover:text-[#17A2B8] transition-colors">{post.title}</h2>
+            <p class="text-sm text-[#64748B] leading-relaxed flex-1">{post.desc}</p>
+            <div class="flex items-center justify-between mt-5">
+              <time class="text-xs text-[#64748B]">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+              <span class="text-[#17A2B8] text-sm font-semibold">Read →</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <CTABanner />
+</Base>
