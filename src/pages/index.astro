@@ -66,16 +66,16 @@ const testimonials = [
 ];
 
 const insurers = [
-  { name: 'Medicare',        logo: null,                                              bg: '#0071BB', text: '#fff' },
-  { name: 'Medicaid',        logo: null,                                              bg: '#007A52', text: '#fff' },
-  { name: 'BCBS',            logo: 'https://logo.clearbit.com/bcbstx.com',            bg: null,      text: null   },
-  { name: 'UnitedHealthcare',logo: 'https://logo.clearbit.com/uhc.com',               bg: null,      text: null   },
-  { name: 'Humana',          logo: 'https://logo.clearbit.com/humana.com',            bg: null,      text: null   },
-  { name: 'Cigna',           logo: 'https://logo.clearbit.com/cigna.com',             bg: null,      text: null   },
-  { name: 'Aetna',           logo: 'https://logo.clearbit.com/aetna.com',             bg: null,      text: null   },
-  { name: 'Ambetter',        logo: 'https://logo.clearbit.com/ambetterhealth.com',    bg: null,      text: null   },
-  { name: 'Oscar',           logo: 'https://logo.clearbit.com/hioscar.com',           bg: null,      text: null   },
-  { name: 'Molina',          logo: 'https://logo.clearbit.com/molinahealthcare.com',  bg: null,      text: null   },
+  { name: 'Medicare',         logo: '/images/insurers/medicare.svg'  },
+  { name: 'Medicaid',         logo: '/images/insurers/medicaid.svg'  },
+  { name: 'BCBS',             logo: '/images/insurers/bcbs.svg'      },
+  { name: 'UnitedHealthcare', logo: '/images/insurers/uhc.svg'       },
+  { name: 'Humana',           logo: '/images/insurers/humana.svg'    },
+  { name: 'Cigna',            logo: '/images/insurers/cigna.svg'     },
+  { name: 'Aetna',            logo: '/images/insurers/aetna.svg'     },
+  { name: 'Ambetter',         logo: '/images/insurers/ambetter.svg'  },
+  { name: 'Oscar',            logo: '/images/insurers/oscar.svg'     },
+  { name: 'Molina',           logo: '/images/insurers/molina.svg'    },
 ];
 ---
 
@@ -218,46 +218,28 @@ const insurers = [
       <ul class="flex shrink-0 gap-12 items-center animate-marquee whitespace-nowrap pr-12">
         {insurers.map(ins => (
           <li class="flex items-center shrink-0">
-            {ins.logo ? (
-              <img
-                src={ins.logo}
-                alt={ins.name}
-                width="120"
-                height="40"
-                class="h-9 w-auto object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                loading="lazy"
-              />
-            ) : (
-              <span
-                class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase"
-                style={`background-color:${ins.bg};color:${ins.text};opacity:0.75`}
-              >
-                {ins.name}
-              </span>
-            )}
+            <img
+              src={ins.logo}
+              alt={ins.name}
+              width="120"
+              height="40"
+              class="h-9 w-auto object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              loading="lazy"
+            />
           </li>
         ))}
       </ul>
       <ul class="flex shrink-0 gap-12 items-center animate-marquee whitespace-nowrap pr-12" aria-hidden="true">
         {insurers.map(ins => (
           <li class="flex items-center shrink-0">
-            {ins.logo ? (
-              <img
-                src={ins.logo}
-                alt={ins.name}
-                width="120"
-                height="40"
-                class="h-9 w-auto object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                loading="lazy"
-              />
-            ) : (
-              <span
-                class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase"
-                style={`background-color:${ins.bg};color:${ins.text};opacity:0.75`}
-              >
-                {ins.name}
-              </span>
-            )}
+            <img
+              src={ins.logo}
+              alt={ins.name}
+              width="120"
+              height="40"
+              class="h-9 w-auto object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              loading="lazy"
+            />
           </li>
         ))}
       </ul>
