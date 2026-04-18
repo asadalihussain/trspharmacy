@@ -450,25 +450,16 @@ const insurers = [
         </div>
       </div>
 
-      <!-- Visual half -->
-      <div class="lg:w-1/2 min-h-[300px] bg-[#9EC8DC] relative overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80"
-          alt="Aerial view of Stafford TX area"
-          class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50 grayscale"
-        />
-        <div class="absolute inset-0 bg-gradient-to-l from-transparent to-[#28759F]/80"></div>
-        <!-- Pin UI -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-          <div class="bg-white px-4 py-2 rounded-xl shadow-xl mb-2 flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-[#F16742] animate-ping"></span>
-            <span class="font-bold text-[#0C2535] text-sm whitespace-nowrap">TRS Pharmacy</span>
-          </div>
-          <div class="w-11 h-11 bg-[#F16742] rounded-full border-4 border-white shadow-lg flex items-center justify-center">
-            <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M5 14.5l-1.57.393A9.065 9.065 0 0012 15a9.065 9.065 0 006.23-.693L19.8 15.3m0 0 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21a48.25 48.25 0 01-8.135-.687c-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" /></svg>
-          </div>
-          <div class="w-0.5 h-6 bg-gradient-to-b from-[#F16742] to-transparent mt-1"></div>
-        </div>
+      <!-- Map half -->
+      <div class="lg:w-1/2 min-h-[300px] relative overflow-hidden">
+        <iframe
+          src="https://maps.google.com/maps?q=3727+Greenbriar+Dr,+Suite+114,+Stafford,+TX+77477&output=embed&z=16"
+          class="absolute inset-0 w-full h-full border-0"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="TRS Pharmacy location map"
+        ></iframe>
       </div>
     </div>
   </section>
