@@ -1,22 +1,22 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 @theme {
   /* New palette: Forest Green + Terracotta */
-  --color-forest-50: #F2F6F5;
-  --color-forest-100: #E5EDE7;
-  --color-forest-200: #CADBD2;
-  --color-forest-300: #AEC8BD;
-  --color-forest-400: #7B9F91;
-  --color-forest-500: #4D7A6C;
-  --color-forest-600: #3A5F53;
-  --color-forest-700: #2A473E;
-  --color-forest-800: #1F473E;
-  --color-forest-900: #112923;
+  --color-forest-50: #EEF5FA;
+  --color-forest-100: #DCF0F8;
+  --color-forest-200: #B8DAEA;
+  --color-forest-300: #9EC8DC;
+  --color-forest-400: #6AAFC9;
+  --color-forest-500: #3589B5;
+  --color-forest-600: #27709A;
+  --color-forest-700: #1E5A78;
+  --color-forest-800: #28759F;
+  --color-forest-900: #0C2535;
 
-  --color-terra: #DC745A;
-  --color-terra-dark: #C25D44;
-  --color-terra-pale: #F8E8E4;
-  --color-terra-deep: #A64630;
+  --color-terra: #F16742;
+  --color-terra-dark: #D4522E;
+  --color-terra-pale: #FDE9E3;
+  --color-terra-deep: #C03D1E;
 
   --color-sand: #F8F6F2;
   --color-cream: #FCFAF8;
@@ -81,7 +81,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: #DC745A;
+    background-color: #F16742;
     color: #fff;
     font-weight: 600;
     padding: 0.75rem 1.75rem;
@@ -89,7 +89,7 @@
     transition: background-color 0.2s;
   }
   .btn-primary:hover {
-    background-color: #C25D44;
+    background-color: #D4522E;
   }
 
   .btn-outline {
@@ -105,13 +105,13 @@
   }
   .btn-outline:hover {
     background-color: #fff;
-    color: #1F473E;
+    color: #28759F;
   }
 
   .section-title {
     font-size: 2rem;
     font-weight: 700;
-    color: #1F473E;
+    color: #28759F;
     margin-bottom: 0.75rem;
   }
 
